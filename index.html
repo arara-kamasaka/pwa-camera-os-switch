@@ -20,10 +20,10 @@
         }
 
         var userAgent = navigator.userAgent.toLowerCase();
-        if (userAgent.indexOf("iphone") > 0 || userAgent.indexOf("ipad") > 0) {
-            setManifest('manifest_ios.json')
+        if (/iphone|ipad|ipod/.test(userAgent)) {
+            setManifest('manifest_ios.json');
         } else {
-            setManifest('manifest.json')
+            setManifest('manifest.json');
         }
         
         if ('serviceWorker' in navigator) {
